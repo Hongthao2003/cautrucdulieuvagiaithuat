@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+
+typedef struct {
+ int day;
+ int month;
+ int year;
+ } date;
+ void nhapNgay(date &){
+ do{
+  printf(" Nhap ngay :");
+  scanf("%d", &day);
+  printf("Nhap thang );
+  scanf("%d",&month);
+  printf("Nhap nam ");
+  scanf("%d, &year);
+ } while( day<0 || day >32 || month <0 || month >12 || year <=0);
+ }
+ void xuatNgay(date){
+ printf("ngay : %d\t thang : %d\t nam : %d",d.day,d.month,d.year);
+}
+
+int main(){
+	date d;
+	nhapNgay(d);
+	xuatNgay(d);
+	getch();
+	return 0;
+}
