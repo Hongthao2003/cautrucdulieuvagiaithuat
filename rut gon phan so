@@ -1,0 +1,30 @@
+#include <iostream.h>
+#include <conio.h>
+
+void main(){
+ int Tu,Mau;
+ int s;
+ 
+ cout<<"Nhap vao phan so: ";
+ cout<<"/nTu: ";
+ cin>> Tu;
+ cout<<"/nMau: ";
+ cin>> Mau;
+ 
+ if(Tu > Mau)
+  for(i = Mau; i <= Mau; i++)
+   if(Tu%i==0 && Mau%i==0)
+    i=s;
+   else
+    cout<<"Phan so toi gian "
+ else
+  for(i = tu; i <= tu; i++)
+   if(Tu%i==0 && Mau%i==0)
+    i=s;
+   else
+    cout<<"Phan so toi gian"
+   
+ cout<<"Ket qua: "<< Tu/s << "/" << Mau/s;
+ 
+ getch();
+}
