@@ -1,29 +1,107 @@
 #include<stdio.h>
 #include<conio.h>
 
-typedef struct {
- int day;
- int month;
- int year;
- } date;
- void nhapNgay(date &){
- do{
-  printf(" Nhap ngay :");
-  scanf("%d", &day);
-  printf("Nhap thang );
-  scanf("%d",&month);
-  printf("Nhap nam ");
-  scanf("%d, &year);
- } while( day<0 || day >32 || month <0 || month >12 || year <=0);
- }
- void xuatNgay(date){
- printf("ngay : %d\t thang : %d\t nam : %d",d.day,d.month,d.year);
+const int minYear = 100, maxYear = 10000;
+int kiemtranamnhuan(int nam)
+{
+	return (nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0);
+}
+int songaytrongthang(int thang, int nam)
+{
+	int Ngaytrongthangg;
+	switch(thang)
+	{
+	case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+		Ngaytrongthang = 31;
+		break;
+	case 4: case 6: case 9 : case 11:
+		Ngaytrongthang = 30;
+		break;
+	case 2:
+		int Check = kiemtranamnhuan(nam);
+		if(Check == 1)
+		{
+			Ngaytrongthang = 29;
+		}
+		else
+		{
+			Ngaytrongthang = 28;
+		}
+	}
+	return Ngaytrongthang;
 }
 
-int main(){
-	date d;
-	nhapNgay(d);
-	xuatNgay(d);
-	getch();
-	return 0;
+void TimngayTruocDo(int Ngay, int Thang, int Nam)
+{
+	int songaytrongthang =songaytrongmotthangThang, Nam);
+	if(Ngay == 1)        
+	{
+		Ngay = Ngaytrongthang;
+		if(Thang == 1)
+		{
+			Thang = 12;
+			Nam;
+		}
+		else             
+			Thang;
+	}
+	else            
+		Ngay;
+		printf("\nNgay truoc do la: %d - %d - %d ", Ngay, Thang, Nam);
+	}
+	void timngayketiep(int Ngay, int Thang, int Nam)
+{
+	int Ngaytrongthang = songaytrongthang(Thang, Nam);
+	if (Ngay < NgayTrongThang) 
+	{
+		Ngay++;
+	}
+	else if (Thang < 12)
+	{
+		Ngay = 1; Thang++;
+	}
+	else  
+	{
+		Ngay = Thang = 1;
+		Nam++;
+	}
+	printf("\nNgay ke tiep la: %d - %d - %d ", Ngay, Thang, Nam);
 }
+	int main()
+	{
+		int Ngay, Thang, Nam;
+
+		do
+		{
+			printf("\nNhap vao nam: ");
+			scanf("%d", &Nam);
+			if(Nam < minYear || Nam > maxYear)
+			{
+				printf("\nSai nam nhap lai nam khac");
+			}
+		}while(Nam < minYear || Nam > maxYear);
+
+		do
+		{
+			printf("\nNhap vao thang: ");
+			scanf("%d", &Thang);
+			if (Thang < 1 || Thang > 12)
+				printf("\nthang sai hay nhap lai");
+		}while(Thang < 1 || Thang > 12);
+
+		int NgayTrongThang = TimSoNgayTrongThang(Thang, Nam);
+		do
+		{
+			printf("\nNhap vao ngay: ");
+			scanf("%d",&Ngay);
+			if(Ngay < 1 || Ngay > NgayTrongThang)
+			{
+				printf("\nNhap lai so ngay khac");
+			}
+		}while(Ngay < 1 || Ngay > NgayTrongThang);
+
+		TimNgayTruocDo(Ngay, Thang, Nam);
+
+		getch();
+		return 0;
+	}
