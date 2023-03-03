@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+ 
+void move(int n,char A,char B,char C)
+ {
+      if(n==1){
+        cout<<A<<" ==> "<<C<<"\n";// neu n = 1 thì chuyentu A -> C
+      }
+      else {        
+        //// Neu n > 1 thi thuc hien lan luot cac buoc
+        move(n - 1, A, C, B); //  Dich chuyen n-1 dia tu A -> B
+        cout<<A<<" ==> "<<C<<"\n"; // Dich chuyen dia thu n tu A -> C
+        move(n - 1, B, A, C); //  Dich chuyen-1 dia tu B -> C
+      }
+ }
+ 
+int main() {
+  int n;
+  cout<<endl<<"Nhap so dia : ";
+  cin>>n;
+  cout<<"  tu dich chuyen cac vi tri A B C la: \n";
+  move(n, 'A', 'B', 'C');
+   
+  cout<<"\n------------------------------\n";
+  cout<<"Chương trình này được dạy tại www.angroup.one";
+}
