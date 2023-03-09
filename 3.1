@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std; 
+
+int  nhapmang(int a[],int n){
+	for (int i = 0; i < n; i++) {
+		cout << "Nhap vao a[" << i << "]: " << endl;
+		cin >> a[i];
+		if (a[i] == 0) {
+			return 0;
+		}
+	}
+	
+}
+void xuatmang(int a[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << a[i] << " ";
+	}
+}
+
+
+void sapxeptangdan(int a[],int n){
+	for (int i = 0;i < n-1;i++) {
+	for (int j = i;j < n;j++) {
+	if (a[i] > a[j]) {
+	int tam = a[i];
+	a[i] = a[j];
+	a[j] = tam;
+	  }
+	 }
+	}
+ 
+}
+int main(){
+	int a[100];
+	int n;
+	
+printf("Khong co so nguyen to nao trong mang");
+	cout << "Nhap n: " << endl;
+	cin >> n;
+	nhapmang(a , n);
+	void xapxep(int a[],int  n);
+	cout << "mang la: " << endl;
+	while(a!=0){
+printf("Nhap so vao mang");
+
+for(int j=0;j<i;j++){
+if(KTSoNguyenTo(a[j]))
+flag=1;
+printf("%d",a[j]);
+)
+if(flag==0){
+printf("dung mang ");
+}
+} 
+	xuatmang(a , n); 
+	return 0;
+}
+
+
+
+
